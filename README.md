@@ -1,56 +1,45 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+![](https://img.shields.io/badge/Ritobroto-Mukherjee-yellow?labelColor=blue)
 
-# Project Name
+# Miscellaneous - Forum App
 
-> Description the project.
-
+> It's a **miscellaneous - forum app** using **MERN stack**, which has been deployed using **Netlify** and **Vercel**
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
+![](https://img.shields.io/badge/ReactJS-blue)&nbsp;![](https://img.shields.io/badge/Node-green)&nbsp;![](https://img.shields.io/badge/Github-yellow)&nbsp;![](https://img.shields.io/badge/Express-red)&nbsp;![](https://img.shields.io/badge/MongoDB-green)
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+- **`git clone https://github.com/RitobrotoMukherjee/forum-app.git`**
+- **`cd forum-app`**
 
+## Front-End Setup
+
+- **`cd frontend`**
+- **`npm i`**
+- **`npm run start`**
+
+## Back-End Setup
+- **`cd frontend`**
+- **`npm i`**
+- **`npm run server`**
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+## Prerequisite
 
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+- Git
+- Node
+- npm
 
 ## Authors
 
-👤 **Author1**
+👤 **Ritobroto Mukherjee**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@RitobrotoMukherjee](https://github.com/RitobrotoMukherjee)
+- Twitter: [@RitobrotoM3](https://twitter.com/RitobrotoM3)
+- LinkedIn: [Ritobroto Mukherjee](https://www.linkedin.com/in/ritobroto-mukherjee-519148ba/)
 
 ## 🤝 Contributing
 
@@ -64,12 +53,10 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+![](https://img.shields.io/badge/Lama-dev-red?labelColor=yellow)
+> - [Instagram](https://www.instagram.com/lamawebdev/) 
+> - [Facebook](https://www.facebook.com/groups/lamadev)
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+This project is [MIT](./MIT.md) licensed.
