@@ -23,6 +23,8 @@
 ## Back-End Setup
 - **`cd frontend`**
 - **`npm i`**
+- **`cdbackend`**
+- **Create `.env` file and add `PORT` number like `PORT=3000` in the file**
 - **`npm run server`**
 
 To get a local copy up and running follow these simple example steps.
