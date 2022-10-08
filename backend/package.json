@@ -2,10 +2,10 @@
   "name": "forum-app-api",
   "version": "0.1.0",
   "description": "A MERN stack forum app API with proper design patterns",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon server.js"
+    "serve": "nodemon index.js"
   },
   "repository": {
     "type": "git",

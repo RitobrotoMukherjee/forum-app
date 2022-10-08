@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const express = require('express');
 const { Logger, NotFound } = require('./middlewares/global_middlewares');
 const ROUTES = require('./routes/route');
@@ -18,7 +16,4 @@ app.use('/api/v1/list', ROUTES);
 // 404 Error handlling
 app.use(NotFound);
 
-// Listen
-app.listen(process.env.PORT, () => {
-    console.warn('Listenning to port ', process.env.PORT);
-});
+module.exports = app;
