@@ -53,9 +53,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-![](https://img.shields.io/badge/Lama-dev-red?labelColor=yellow)
-> - [Instagram](https://www.instagram.com/lamawebdev/) 
-> - [Facebook](https://www.facebook.com/groups/lamadev)
+![The Net Ninja](https://img.shields.io/badge/NET-NINJA-000?style=for-the-badge&labelColor=red)
+- [YouTube](https://www.youtube.com/c/TheNetNinja)
 
 ## 📝 License
 
