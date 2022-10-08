@@ -1,17 +1,22 @@
 require('dotenv').config();
 
 const express = require('express');
-const Logger = require('./middlewares/logger');
+const { Logger, NotFound } = require('./middlewares/global_middlewares');
+const ROUTES = require('./routes/route');
 
 // Invoke App
 const app = express();
 
-// Global Middleware
+// To get post and patch request body as json
+app.use(express.json());
+// To log request data
 app.use(Logger);
 
-app.get('/', (req, resp) => {
-    resp.send({ message: "Home Page" });
-});
+// Routes set up
+app.use('/api/v1/list', ROUTES);
+
+// 404 Error handlling
+app.use(NotFound);
 
 // Listen
 app.listen(process.env.PORT, () => {
