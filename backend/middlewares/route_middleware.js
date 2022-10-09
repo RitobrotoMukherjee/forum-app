@@ -2,11 +2,12 @@ const mongoose = require('mongoose');
 
 const CheckIdHandler = (req, resp, next) => {
     const { id } = req.params;
-    try {
+    
+    if(mongoose.Types.ObjectId.isValid(id)) {
         req.objectId = mongoose.Types.ObjectId(id);
         next();
-    } catch(err) {
-        return resp.status(500).send({ error: true, msg: "Invalid Id",details: err.message });
+    } else {
+        return resp.status(500).send({ error: true, msg: "Invalid Id" });
     }
 }
 

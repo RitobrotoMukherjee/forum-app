@@ -1,4 +1,3 @@
-const { default: mongoose } = require('mongoose');
 const ForumModel = require('../models/forum_model');
 
 // To support immutability using constants
@@ -18,23 +17,23 @@ const GetData = (_, resp) => {
 }
 
 const GetDataById = async (req, resp) => {
-    const { id } = req.params;
+    const { objectId } = req;
     
-    const data = await ForumModel.findById(mongoose.Types.ObjectId(id));
+    const data = await ForumModel.findById(objectId);
     
     if(!data) return resp.status(404).send({ ...SUCCESS });
     
-    resp.status(200).send({ ...SUCCESS, data, msg: `${id} - ${data.title} found` })
+    resp.status(200).send({ ...SUCCESS, data, msg: `${objectId} - ${data.title} found` })
 }
 
 const CreateData = async (req, resp) => {
     const { title, description, type } = req.body;
     const validate = new ForumModel({ title, description, type });
     const errors = validate.validateSync();
-    if(errors) resp.status(400).send({ error: true, msg: errors.message});
+    if(errors) resp.status(400).send({ ...ERROR, msg: errors.message});
     else {
         const data = await validate.save();
-        resp.status(200).send({ data, msg: "Data Created" })
+        resp.status(200).send({ ...SUCCESS, data, msg: "Data Created" })
     }
 }
 
@@ -43,8 +42,8 @@ const DeleteData = async (req, resp) => {
 
     const { acknowledged, deletedCount } = await ForumModel.deleteOne({ _id: objectId });
     
-    if(acknowledged && deletedCount) resp.status(200).send({ ...SUCCESS, msg: `${id} Deleted` });
-    else if(acknowledged && !deletedCount) resp.status(404).send({ ...SUCCESS, msg: `${id} Not Found` });
+    if(acknowledged && deletedCount) resp.status(200).send({ ...SUCCESS, msg: `${objectId} Deleted` });
+    else if(acknowledged && !deletedCount) resp.status(404).send({ ...SUCCESS, msg: `${objectId} Not Found` });
     else resp.status(400).send({ ...ERROR, msg: "Some Error Happened" });
 }
 
