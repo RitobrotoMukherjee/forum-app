@@ -23,6 +23,10 @@
 ## Back-End Setup
 - **`cd frontend`**
 - **`npm i`**
+- **`cdbackend`**
+- **Create `.env` file**
+- > **Add `PORT`(port you run application),**
+  > **`MONGO_URI`(mongo db connection) variables in the file**
 - **`npm run server`**
 
 To get a local copy up and running follow these simple example steps.
