@@ -11,7 +11,7 @@ const ForumSchema = new mongoose.Schema({
     },
     type: {
         type: Number,
-        required: [true, 'Description is required'],
+        required: [true, 'Type is required'],
         validate: {
             validator: v => /^[\d+]*$/g.test(v),
             message: props => `Type value: ${props.value} is not a valid integer`
