@@ -6,7 +6,7 @@ const CheckIdHandler = (req, resp, next) => {
         req.objectId = mongoose.Types.ObjectId(id);
         next();
     } catch(err) {
-        return resp.status(500).send({ error: true, msg: err.message });
+        return resp.status(500).send({ error: true, msg: "Invalid Id",details: err.message });
     }
 }
 

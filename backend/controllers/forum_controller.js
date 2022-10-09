@@ -10,7 +10,6 @@ const ERROR = {
     error: true, msg: "ERROR!"
 }
 
-// Get Req
 const GetData = (_, resp) => {
     ForumModel.find({}, (err, data) => {
         if(err) return resp.status(400).send({ ...ERROR, msg: err.message});
@@ -49,7 +48,28 @@ const DeleteData = async (req, resp) => {
     else resp.status(400).send({ ...ERROR, msg: "Some Error Happened" });
 }
 
+const UpdateDataById = async (req, resp) => {
+    const { objectId } = req;
+    
+    try {
+        const { acknowledged, modifiedCount, matchedCount } = await ForumModel.updateOne(
+            { _id: objectId },
+            {
+                $set: { ...req.body }
+            },
+            { runValidators: true }
+        );
+        
+        if(acknowledged) {
+            if(modifiedCount) return resp.status(200).send({...SUCCESS, msg: `${objectId} updated`});
+            if(!modifiedCount) return resp.status(200).send({...SUCCESS, msg: `${objectId} nothing updated`});
+            if(!matchedCount) return resp.status(404).send({ ...ERROR, msg: `No data is matching ${objectId}` })
+        }
+    } catch(err) { resp.status(400).send({ ...ERROR, msg: err.message}); }
+    
+}
+
 module.exports = {
     GetData, GetDataById, CreateData,
-    DeleteData
+    DeleteData, UpdateDataById
 }
