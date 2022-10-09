@@ -39,6 +39,17 @@ const CreateData = async (req, resp) => {
     }
 }
 
+const DeleteData = async (req, resp) => {
+    const { id } = req.params;
+
+    const { acknowledged, deletedCount } = await ForumModel.deleteOne({ _id: mongoose.Types.ObjectId(id) });
+    
+    if(acknowledged && deletedCount) resp.status(200).send({ ...SUCCESS, msg: `${id} Deleted` });
+    else if(acknowledged && !deletedCount) resp.status(404).send({ ...SUCCESS, msg: `${id} Not Found` });
+    else resp.status(400).send({ ...ERROR, msg: "Some Error Happened" });
+}
+
 module.exports = {
-    GetData, GetDataById, CreateData
+    GetData, GetDataById, CreateData,
+    DeleteData
 }

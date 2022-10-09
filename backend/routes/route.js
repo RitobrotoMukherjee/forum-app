@@ -1,7 +1,8 @@
 const express = require('express');
+const { CheckIdHandler } = require('../middlewares/route_middleware');
 const {
     GetData, GetDataById, 
-    CreateData
+    CreateData, DeleteData
 } = require('../controllers/forum_controller');
 
 const router = express.Router();
@@ -10,16 +11,14 @@ const router = express.Router();
 router.get('/', GetData);
 
 // Get By ID
-router.get('/:id', GetDataById);
+router.get('/:id', CheckIdHandler, GetDataById);
 
 // Create 1 Entry
 router.post('/', CreateData);
 
-router.delete('/:id', (req, resp) => {
-    resp.send({ msg: `Delete ${req.params.id}` });
-});
+router.delete('/:id', CheckIdHandler, DeleteData);
 
-router.patch('/:id', (req, resp) => {
+router.patch('/:id', CheckIdHandler, (req, resp) => {
     resp.send({ msg: `Update data for ${req.params.id}` });
 });
 
