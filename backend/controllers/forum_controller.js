@@ -40,9 +40,9 @@ const CreateData = async (req, resp) => {
 }
 
 const DeleteData = async (req, resp) => {
-    const { id } = req.params;
+    const { objectId } = req;
 
-    const { acknowledged, deletedCount } = await ForumModel.deleteOne({ _id: mongoose.Types.ObjectId(id) });
+    const { acknowledged, deletedCount } = await ForumModel.deleteOne({ _id: objectId });
     
     if(acknowledged && deletedCount) resp.status(200).send({ ...SUCCESS, msg: `${id} Deleted` });
     else if(acknowledged && !deletedCount) resp.status(404).send({ ...SUCCESS, msg: `${id} Not Found` });
